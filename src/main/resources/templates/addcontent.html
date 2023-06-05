@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Content</title>
+</head>
+<header th:replace="lib/header :: header"></header>
+<body>
+<div style="max-width: 200px; height: 90vh; float: left;">
+  <a th:href="@{/contentlist}">View Contents</a><br/>
+  <a th:href="@{/addcontent}">Form Content</a>
+</div>
+<div style="display: inline-block; float: left;">
+  <h1>Add Content</h1>
+  <label for="frmContent">Content Form Elements</label>
+  <form method="post" th:action="@{/addcontent}" id="frmContent">
+    <label for="txtTitle"><strong>Title</strong></label>
+    <input type="text" id="txtTitle" name="title" placeholder="Enter the title" required maxlength="50"><br/>
+    <label for="txtBrief"><strong>Brief</strong></label>
+    <textarea id="txtBrief" name="brief"></textarea><br/>
+    <label for="txtContent"><Strong>Content</Strong></label>
+    <textarea id="txtContent" name="content" required></textarea><br/>
+    <input type="submit" value="Submit">
+    <a th:href="@{/addcontent}">Reset</a>
+  </form>
+</div>
+<br/>
+<p th:text="${notification}"></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+</head>
+<body>
+<header th:replace="lib/header :: header"></header>
+<div style="max-width: 200px; height: 90vh; float: left;">
+    <a th:href="@{/contentlist}">View Contents</a><br/>
+    <a th:href="@{/addcontent}">Form Content</a>
+</div>
+<div style="display: inline-block; float: left;">
+<h1>Edit Profile</h1>
+    <label for="frmProfile">Profile Form Element</label>
+    <form method="post" th:action="@{/editprofile}" id="frmProfile">
+        <label for="txtFirstName"><strong>First Name</strong></label>
+        <input type="text" id="txtFirstName" name="firstName"
+               maxlength="50" placeholder="Enter your First Name" required><br/>
+        <label for="txtLastName"><strong>Last Name</strong></label>
+        <input type="text" id="txtLastName" name="lastName"
+               maxlength="50" placeholder="Enter your Last Name" required><br/>
+        <label for="txtEmail"><strong>Email</strong></label>
+        <input type="text" id="txtEmail" name="email" th:value="${member.email}" readonly><br/>
+        <label for="txtPhone"><strong>Phone</strong></label>
+        <input type="number" id="txtPhone" name="phone" placeholder="Enter your Phone"><br/>
+        <label for="txtdesc">Description</label>
+        <textarea id="txtdesc" name="description"></textarea><br/>
+        <input type="submit" value="Submit">
+        <a th:href="@{/editprofile}">Reset</a>
+    </form>
+    <p th:text="${notification}"></p>
+</div>
+</body>
+</html>

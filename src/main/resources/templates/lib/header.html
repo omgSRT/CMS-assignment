@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.com">
+<header>
+    <div style="display: inline-block; align-items: center;">
+        <h3>CMS</h3>
+    </div>
+    <div style="display: inline-block; align-items: center; position: absolute; right: 0;">
+        <label for="multiopt">Options</label>
+        <select name="option" id="multiopt">
+            <option value="">Choose an option</option>
+            <option th:value="@{/editprofile}">Edit Profile</option>
+            <option th:value="@{/logoutmember}">Logout Member</option>
+        </select>
+    </div>
+    <script>
+        const multiopt = document.getElementById("multiopt");
+        multiopt.onchange = function() {
+            window.location.href = this.value;
+        };
+    </script>
+</header>
+
+</html>

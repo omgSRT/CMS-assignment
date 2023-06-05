@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1>Registration</h1>
+<label for="frmRegister">Register New Account</label>
+<form method="post" th:action="@{/register}" id="frmRegister">
+    <label for="txtFirstName"><strong>First Name</strong></label>
+    <input type="text" id="txtFirstName" name="firstName" placeholder="Enter your first name" required maxlength="50"><br/>
+    <label for="txtLastName"><strong>Last Name</strong></label>
+    <input type="text" id="txtLastName" name="lastName" placeholder="Enter your last name" required maxlength="50"><br/>
+    <label for="txtEmail"><strong>Email</strong></label>
+    <input type="text" id="txtEmail" name="email" placeholder="Enter the email" required maxlength="50"><br/>
+    <label for="txtUsername"><strong>Username</strong></label>
+    <input type="text" id="txtUsername" name="username" placeholder="Enter new username" required maxlength="50"><br/>
+    <label for="txtPassword"><strong>Password</strong></label>
+    <input type="password" id="txtPassword" name="password" placeholder="Enter the password" required><br/>
+    <input type="submit" value="Register">
+</form>
+</body>
+</html>
